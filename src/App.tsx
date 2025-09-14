@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [text, setText] = useState('')
+
+  console.log('Component rendered with: ' + text)
+
+  useEffect(() => {
+    const handler = (e: any) => {
+      setText((state) => state + e.key)
+    }
+
+    window.document.addEventListener('keypress', handler)
+
+    return () => window.document.removeEventListener('keypress', handler)
+  }, [text])
+
+  return <>Text: {text}</>
 }
 
-export default App;
+export default App

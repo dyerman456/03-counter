@@ -1,5 +1,5 @@
 {
-  "name": "03-conter",
+  "name": "03-counter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,5 +40,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  },
+  "resolutions": {
+    "eslint-plugin-react": "7.37.2"
   }
 }
